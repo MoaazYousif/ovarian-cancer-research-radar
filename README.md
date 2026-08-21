@@ -100,9 +100,6 @@ The app will be available at `http://localhost:3000`.
 - [ ] Scheduled background ingestion (cron job)
 - [ ] User authentication for multi-user deployments
 
-## 📄 License
-
-This project is licensed under the MIT License — see the [LICENSE](LICENSE) file for details.
 
 ## 🙋 About
 
