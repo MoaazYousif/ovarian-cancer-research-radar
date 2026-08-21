@@ -1,0 +1,6 @@
+{
+  "name": "Ovarian Cancer Research Radar",
+  "description": "Personalized research-intelligence platform for monitoring newly published ovarian cancer and HGSOC scientific literature, dynamic entity discovery, ranking, trend detection, and AI summarization.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
