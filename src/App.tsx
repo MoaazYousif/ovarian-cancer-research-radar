@@ -22,11 +22,13 @@ import { HgsocLiveTopicSyncBar } from './components/HgsocLiveTopicSyncBar';
 import { HgsocResearchHubTab } from './components/HgsocResearchHubTab';
 import { DailyPapersTab } from './components/DailyPapersTab';
 import { GlobalPubMedCensusDashboard } from './components/GlobalPubMedCensusDashboard';
+import { LandingPage } from './components/LandingPage';
 import { runIngestionPipeline } from './services/ingestion/pipeline';
 import { isPaperNewToday, RESEARCH_DOMAINS } from './types/researchDomains';
 import { ArrowUpDown, CheckCircle2, X, Sparkles, BookOpen, RefreshCw } from 'lucide-react';
 
 export function App() {
+  const [showLanding, setShowLanding] = useState(true);
   const [papers, setPapers] = useState<Paper[]>(paperStore.getPapers());
   const [profile, setProfile] = useState<UserProfile>(paperStore.getProfile());
   const [activeTab, setActiveTab] = useState<ActiveTabType>('feed');
@@ -230,6 +232,10 @@ export function App() {
 
   const savedCount = papers.filter((p) => p.isSaved).length;
   const hgsocCount = papers.filter((p) => p.ovarianSubtype === 'HGSOC').length;
+
+  if (showLanding) {
+    return <LandingPage onLaunch={() => setShowLanding(false)} />;
+  }
 
   return (
     <div className="min-h-screen bg-[#0a0a0a] text-slate-300 font-sans flex flex-col selection:bg-[#c4a484]/30 selection:text-white relative" dir="ltr">
